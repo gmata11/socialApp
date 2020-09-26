@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Login().preferredColorScheme(.dark)
-            .navigationBarHidden(true)
-        
+        NavigationView {
+            Login()
+                .preferredColorScheme(.dark)
+                .navigationBarHidden(true)
+        }
     }
 }
 

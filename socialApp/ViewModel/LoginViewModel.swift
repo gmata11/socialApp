@@ -13,6 +13,8 @@ class LoginViewModel: ObservableObject {
     @Published var number = ""
     @Published var errorMsg = ""
     @Published var error = false
+    @Published var registerUser = false
+    @AppStorage("current_status") var status = false
     
     func verifyUser() {
         
@@ -33,6 +35,8 @@ class LoginViewModel: ObservableObject {
                         self.error.toggle()
                         return
                     }
+                    
+                    self.checkUser()
                 }
             }
         }
@@ -53,5 +57,22 @@ class LoginViewModel: ObservableObject {
             completion(code)
         }))
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
+    }
+    
+    func checkUser() {
+        let ref = Firestore.firestore()
+        let uid = Auth.auth().currentUser?.uid
+        
+        ref.collection("Users").whereField("uid", arrayContains: uid).getDocuments { (snap, err) in
+            if err != nil {
+                self.registerUser.toggle()
+                return
+            }
+            if snap!.documents.isEmpty {
+                self.registerUser.toggle()
+                return
+            }
+            self.status = true
+        }
     }
 }

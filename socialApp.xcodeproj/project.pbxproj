@@ -16,6 +16,9 @@
 		0E43B29B251E398B0057366C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E43B29A251E398B0057366C /* GoogleService-Info.plist */; };
 		0E9DF452251E3C6200B00FBF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF451251E3C6200B00FBF /* Login.swift */; };
 		0E9DF45A251E3E7F00B00FBF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF459251E3E7F00B00FBF /* LoginViewModel.swift */; };
+		0E9DF490251F3A0700B00FBF /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF48F251F3A0700B00FBF /* Register.swift */; };
+		0E9DF4AC251F3F6D00B00FBF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF4AB251F3F6C00B00FBF /* RegisterViewModel.swift */; };
+		0E9DF4B1251F42EA00B00FBF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF4B0251F42EA00B00FBF /* ImagePicker.swift */; };
 		528D46518EE028C22B44355D /* Pods_socialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7C0EA23C6556207C85C0B3 /* Pods_socialApp.framework */; };
 		9643EB885675E65D3154F4AF /* Pods_socialAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB387B140E3284B2F7EEE5B /* Pods_socialAppTests.framework */; };
 		AD64F54CAD3F8CAD6A007AC3 /* Pods_socialApp_socialAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9C455438030FC875556950 /* Pods_socialApp_socialAppUITests.framework */; };
@@ -55,6 +58,9 @@
 		0E43B29A251E398B0057366C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E9DF451251E3C6200B00FBF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0E9DF459251E3E7F00B00FBF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0E9DF48F251F3A0700B00FBF /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		0E9DF4AB251F3F6C00B00FBF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		0E9DF4B0251F42EA00B00FBF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		1AB387B140E3284B2F7EEE5B /* Pods_socialAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3341A27BFA853472A1623CD8 /* Pods-socialApp-socialAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialApp-socialAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-socialApp-socialAppUITests/Pods-socialApp-socialAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5271AC2D5E79B5611A1C4C6F /* Pods-socialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialApp.debug.xcconfig"; path = "Target Support Files/Pods-socialApp/Pods-socialApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				0E9DF451251E3C6200B00FBF /* Login.swift */,
+				0E9DF48F251F3A0700B00FBF /* Register.swift */,
+				0E9DF4B0251F42EA00B00FBF /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				0E9DF459251E3E7F00B00FBF /* LoginViewModel.swift */,
+				0E9DF4AB251F3F6C00B00FBF /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -442,9 +451,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E9DF45A251E3E7F00B00FBF /* LoginViewModel.swift in Sources */,
+				0E9DF4AC251F3F6D00B00FBF /* RegisterViewModel.swift in Sources */,
 				0E9DF452251E3C6200B00FBF /* Login.swift in Sources */,
+				0E9DF4B1251F42EA00B00FBF /* ImagePicker.swift in Sources */,
 				0E43B26C251E2F350057366C /* ContentView.swift in Sources */,
 				0E43B26A251E2F350057366C /* socialAppApp.swift in Sources */,
+				0E9DF490251F3A0700B00FBF /* Register.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
