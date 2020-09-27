@@ -36,18 +36,23 @@ struct Login: View {
             .padding()
             .padding(.top, 10)
             
-            HStack {
-                Button(action: loginData.verifyUser, label: {
-                    Text("Verify")
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(.vertical)
-                        .frame(width: UIScreen.main.bounds.width - 100)
-                        .background(Color("ButtonLogin"))
-                        .clipShape(Capsule())
-                })
-                .disabled(loginData.code == "" || loginData.number == "" ? true : false)
-                .opacity((loginData.code == "" || loginData.number == "" ? 0.5 : 1))
+            if loginData.isLoading {
+                ProgressView()
+                    .padding()
+            } else {
+                HStack {
+                    Button(action: loginData.verifyUser, label: {
+                        Text("Verify")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .padding(.vertical)
+                            .frame(width: UIScreen.main.bounds.width - 100)
+                            .background(Color("ButtonLogin"))
+                            .clipShape(Capsule())
+                    })
+                    .disabled(loginData.code == "" || loginData.number == "" ? true : false)
+                    .opacity((loginData.code == "" || loginData.number == "" ? 0.5 : 1))
+                }
             }
             
             Spacer(minLength: 20)

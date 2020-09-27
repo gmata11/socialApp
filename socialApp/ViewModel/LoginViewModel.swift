@@ -15,9 +15,11 @@ class LoginViewModel: ObservableObject {
     @Published var error = false
     @Published var registerUser = false
     @AppStorage("current_status") var status = false
+    @Published var isLoading = false
     
     func verifyUser() {
         
+        isLoading = true
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         
         let phoneNumber = "+" + code + number
@@ -25,6 +27,7 @@ class LoginViewModel: ObservableObject {
             if err != nil {
                 self.errorMsg = err!.localizedDescription
                 self.error.toggle()
+                self.isLoading = false
                 return
             }
             self.alertView { (Code) in
@@ -33,6 +36,7 @@ class LoginViewModel: ObservableObject {
                     if err != nil {
                         self.errorMsg = err!.localizedDescription
                         self.error.toggle()
+                        self.isLoading = false
                         return
                     }
                     
@@ -63,13 +67,15 @@ class LoginViewModel: ObservableObject {
         let ref = Firestore.firestore()
         let uid = Auth.auth().currentUser?.uid
         
-        ref.collection("Users").whereField("uid", arrayContains: uid).getDocuments { (snap, err) in
+        ref.collection("Users").whereField("uid", isEqualTo: uid).getDocuments { (snap, err) in
             if err != nil {
                 self.registerUser.toggle()
+                self.isLoading = false
                 return
             }
             if snap!.documents.isEmpty {
                 self.registerUser.toggle()
+                self.isLoading = false
                 return
             }
             self.status = true

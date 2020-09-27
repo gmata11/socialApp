@@ -59,20 +59,24 @@ struct Register: View {
             .padding()
             .padding(.top, 10)
             
-            HStack {
-                Button(action: registerData.register, label: {
-                    Text("Register")
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(.vertical)
-                        .frame(width: UIScreen.main.bounds.width - 100)
-                        .background(Color("ButtonLogin"))
-                        .clipShape(Capsule())
-                })
-                .disabled(registerData.image_data.count == 0 || registerData.name == "" || registerData.bio == "" ? true : false)
-                .opacity((registerData.image_data.count == 0 || registerData.name == "" || registerData.bio == "" ? 0.5 : 1))
+            if registerData.isLoading {
+                ProgressView()
+                    .padding()
+            } else {
+                HStack {
+                    Button(action: registerData.register, label: {
+                        Text("Register")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .padding(.vertical)
+                            .frame(width: UIScreen.main.bounds.width - 100)
+                            .background(Color("ButtonLogin"))
+                            .clipShape(Capsule())
+                    })
+                    .disabled(registerData.image_data.count == 0 || registerData.name == "" || registerData.bio == "" ? true : false)
+                    .opacity((registerData.image_data.count == 0 || registerData.name == "" || registerData.bio == "" ? 0.5 : 1))
+                }
             }
-
             
             Spacer(minLength: 20)
             
