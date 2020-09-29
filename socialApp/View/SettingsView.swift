@@ -7,11 +7,13 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import Firebase
 
 struct SettingsView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var settingsData = SettingsViewModel()
     @State var open = false
+    let uid = Auth.auth().currentUser!.uid
     var body: some View {
         VStack {
             HStack {
@@ -22,7 +24,6 @@ struct SettingsView: View {
                 Spacer(minLength: 0)
                 Button(action: {
                     self.open.toggle()
-                    settingsData.fetchUser()
                 }) {
                     Image(systemName: "goforward")
                         .rotationEffect(.degrees(open ? 365 : 0))

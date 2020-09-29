@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E196C5F252392BA00A4BCBD /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E196C5E252392BA00A4BCBD /* PostViewModel.swift */; };
+		0E196C642523931100A4BCBD /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E196C632523931100A4BCBD /* PostModel.swift */; };
+		0E196C69252394D600A4BCBD /* FetchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E196C68252394D600A4BCBD /* FetchUser.swift */; };
+		0E196C6E252397C100A4BCBD /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E196C6D252397C100A4BCBD /* PostRow.swift */; };
 		0E43B26A251E2F350057366C /* socialAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43B269251E2F350057366C /* socialAppApp.swift */; };
 		0E43B26C251E2F350057366C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43B26B251E2F350057366C /* ContentView.swift */; };
 		0E43B26E251E2F350057366C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E43B26D251E2F350057366C /* Assets.xcassets */; };
@@ -52,6 +56,10 @@
 
 /* Begin PBXFileReference section */
 		0AF55B735426B06D766EFF78 /* Pods-socialAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialAppTests.release.xcconfig"; path = "Target Support Files/Pods-socialAppTests/Pods-socialAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		0E196C5E252392BA00A4BCBD /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		0E196C632523931100A4BCBD /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		0E196C68252394D600A4BCBD /* FetchUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUser.swift; sourceTree = "<group>"; };
+		0E196C6D252397C100A4BCBD /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
 		0E43B266251E2F350057366C /* socialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E43B269251E2F350057366C /* socialAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = socialAppApp.swift; sourceTree = "<group>"; };
 		0E43B26B251E2F350057366C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -187,6 +195,8 @@
 				0E9DF4CC251F5F4C00B00FBF /* UploadImage.swift */,
 				0E6111D525230FC1003B1412 /* UserModel.swift */,
 				0E6111DA252337D3003B1412 /* AlertView.swift */,
+				0E196C632523931100A4BCBD /* PostModel.swift */,
+				0E196C68252394D600A4BCBD /* FetchUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +211,7 @@
 				0EDE048C2520D7B0007584AF /* PostView.swift */,
 				0EDE04912520D7D1007584AF /* SettingsView.swift */,
 				0EDE04962520D880007584AF /* CustomTabBar.swift */,
+				0E196C6D252397C100A4BCBD /* PostRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 				0E9DF459251E3E7F00B00FBF /* LoginViewModel.swift */,
 				0E9DF4AB251F3F6C00B00FBF /* RegisterViewModel.swift */,
 				0E6111D025230F5F003B1412 /* SettingsViewModel.swift */,
+				0E196C5E252392BA00A4BCBD /* PostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -482,9 +494,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E196C5F252392BA00A4BCBD /* PostViewModel.swift in Sources */,
 				0E9DF45A251E3E7F00B00FBF /* LoginViewModel.swift in Sources */,
 				0E9DF4AC251F3F6D00B00FBF /* RegisterViewModel.swift in Sources */,
 				0E9DF452251E3C6200B00FBF /* Login.swift in Sources */,
+				0E196C642523931100A4BCBD /* PostModel.swift in Sources */,
 				0E9DF4B1251F42EA00B00FBF /* ImagePicker.swift in Sources */,
 				0E9DF4D225208C9000B00FBF /* Home.swift in Sources */,
 				0E6111DB252337D3003B1412 /* AlertView.swift in Sources */,
@@ -495,8 +509,10 @@
 				0E6111D125230F5F003B1412 /* SettingsViewModel.swift in Sources */,
 				0EDE048D2520D7B0007584AF /* PostView.swift in Sources */,
 				0E9DF490251F3A0700B00FBF /* Register.swift in Sources */,
+				0E196C6E252397C100A4BCBD /* PostRow.swift in Sources */,
 				0EDE04972520D880007584AF /* CustomTabBar.swift in Sources */,
 				0EDE04922520D7D1007584AF /* SettingsView.swift in Sources */,
+				0E196C69252394D600A4BCBD /* FetchUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

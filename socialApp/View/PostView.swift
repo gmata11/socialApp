@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PostView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
+    @StateObject var postData = PostViewModel()
+    @State var open = false
     var body: some View {
         VStack {
             HStack {
@@ -17,8 +19,11 @@ struct PostView: View {
                     .fontWeight(.medium)
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
-                Button(action: {}) {
+                Button(action: { self.open.toggle() }) {
                     Image(systemName: "square.and.pencil")
+                        .foregroundColor(.white)
+                        .rotationEffect(.degrees(open ? 365 : 0))
+                        .animation(.spring(response: 0.2, dampingFraction: 0.4, blendDuration: 0))
                         .font(.title)
                         .foregroundColor(Color("ButtonLogin"))
                 }
@@ -28,7 +33,25 @@ struct PostView: View {
             .background(Color("Background"))
             .shadow(color: Color.white.opacity(0.06), radius: 5, x: 0, y: 5)
             
-            Spacer(minLength: 0)
+            if postData.posts.isEmpty {
+                Spacer(minLength: 0)
+                if postData.noPost {
+                    Text("No Posts!")
+                } else {
+                    ProgressView()
+                }
+                
+                Spacer(minLength: 0)
+            } else {
+                ScrollView {
+                    VStack(spacing: 15) {
+                        ForEach(postData.posts){post in
+                            PostRow(post: post)
+                        }
+                    }
+                    .padding()
+                }
+            }
         }
     }
 }

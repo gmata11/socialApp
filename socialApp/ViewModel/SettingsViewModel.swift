@@ -18,21 +18,12 @@ class SettingsViewModel: ObservableObject {
     let uid = Auth.auth().currentUser!.uid
     
     init() {
-        fetchUser()
-    }
-    
-    func fetchUser() {
-        ref.collection("Users").document(uid).getDocument { (doc, err) in
-            guard let user = doc else { return }
-            let username = user.data()?["username"] as! String
-            let pic = user.data()?["imageurl"] as! String
-            let bio = user.data()?["bio"] as! String
-            
-            DispatchQueue.main.async {
-                self.userInfo = UserModel(username: username, pic: pic, bio: bio)
-            }
+        fetchUser(uid: uid) { (user) in
+            self.userInfo = user
         }
     }
+    
+
     
     func logOut() {
         try! Auth.auth().signOut()
@@ -45,7 +36,9 @@ class SettingsViewModel: ObservableObject {
             self.ref.collection("Users").document(self.uid).updateData(["imageurl" : url]) { (err) in
                 if err != nil { return }
                 self.isLoading = false
-                self.fetchUser()
+                fetchUser(uid: self.uid) { (user) in
+                    self.userInfo = user
+                }
             }
         }
     }
@@ -61,7 +54,9 @@ class SettingsViewModel: ObservableObject {
     func updateBio(id: String, value: String) {
         ref.collection("Users").document(uid).updateData([id : value]) { (err) in
             if err != nil { return }
-            self.fetchUser()
+            fetchUser(uid: self.uid) { (user) in
+                self.userInfo = user
+            }
         }
     }
 }
