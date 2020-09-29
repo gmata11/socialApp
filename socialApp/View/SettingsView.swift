@@ -32,6 +32,14 @@ struct SettingsView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 125, height: 125)
                         .clipShape(Circle())
+                    if settingsData.isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: Color("ButtonLogin")))
+                    }
+                }
+                .padding(.top, 25)
+                .onTapGesture {
+                    settingsData.picker.toggle()
                 }
             }
             
@@ -41,7 +49,7 @@ struct SettingsView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 Button(action: {}) {
-                    Image(systemName: "square.and.pencil")
+                    Image(systemName: "pencil.circle.fill")
                         .font(.system(size: 20))
                         .foregroundColor(.white)
                 }
@@ -52,7 +60,7 @@ struct SettingsView: View {
                 Text(settingsData.userInfo.bio)
                     .foregroundColor(.white)
                 Button(action: {}) {
-                    Image(systemName: "square.and.pencil")
+                    Image(systemName: "pencil.circle.fill")
                         .font(.system(size: 20))
                         .foregroundColor(.white)
                 }
@@ -68,8 +76,15 @@ struct SettingsView: View {
                     .clipShape(Capsule())
             })
             .padding()
+            .padding(.top, 10)
             
             Spacer(minLength: 0)
+        }
+        .sheet(isPresented: $settingsData.picker) {
+            ImagePicker(picker: $settingsData.picker, img_Data: $settingsData.img_data)
+        }
+        .onChange(of: settingsData.img_data) { (newData) in
+            settingsData.updateImage()
         }
     }
 }
