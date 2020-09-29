@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		0E43B27C251E2F360057366C /* socialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43B27B251E2F360057366C /* socialAppTests.swift */; };
 		0E43B287251E2F360057366C /* socialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43B286251E2F360057366C /* socialAppUITests.swift */; };
 		0E43B29B251E398B0057366C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E43B29A251E398B0057366C /* GoogleService-Info.plist */; };
+		0E6111D125230F5F003B1412 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6111D025230F5F003B1412 /* SettingsViewModel.swift */; };
+		0E6111D625230FC1003B1412 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6111D525230FC1003B1412 /* UserModel.swift */; };
 		0E9DF452251E3C6200B00FBF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF451251E3C6200B00FBF /* Login.swift */; };
 		0E9DF45A251E3E7F00B00FBF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF459251E3E7F00B00FBF /* LoginViewModel.swift */; };
 		0E9DF490251F3A0700B00FBF /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF48F251F3A0700B00FBF /* Register.swift */; };
@@ -21,6 +23,10 @@
 		0E9DF4B1251F42EA00B00FBF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF4B0251F42EA00B00FBF /* ImagePicker.swift */; };
 		0E9DF4CD251F5F4C00B00FBF /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF4CC251F5F4C00B00FBF /* UploadImage.swift */; };
 		0E9DF4D225208C9000B00FBF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DF4D125208C9000B00FBF /* Home.swift */; };
+		0EDE04882520D729007584AF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDE04872520D729007584AF /* SDWebImageSwiftUI */; };
+		0EDE048D2520D7B0007584AF /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE048C2520D7B0007584AF /* PostView.swift */; };
+		0EDE04922520D7D1007584AF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE04912520D7D1007584AF /* SettingsView.swift */; };
+		0EDE04972520D880007584AF /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE04962520D880007584AF /* CustomTabBar.swift */; };
 		528D46518EE028C22B44355D /* Pods_socialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7C0EA23C6556207C85C0B3 /* Pods_socialApp.framework */; };
 		9643EB885675E65D3154F4AF /* Pods_socialAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB387B140E3284B2F7EEE5B /* Pods_socialAppTests.framework */; };
 		AD64F54CAD3F8CAD6A007AC3 /* Pods_socialApp_socialAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9C455438030FC875556950 /* Pods_socialApp_socialAppUITests.framework */; };
@@ -58,6 +64,8 @@
 		0E43B286251E2F360057366C /* socialAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = socialAppUITests.swift; sourceTree = "<group>"; };
 		0E43B288251E2F360057366C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E43B29A251E398B0057366C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E6111D025230F5F003B1412 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		0E6111D525230FC1003B1412 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0E9DF451251E3C6200B00FBF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0E9DF459251E3E7F00B00FBF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0E9DF48F251F3A0700B00FBF /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -65,6 +73,9 @@
 		0E9DF4B0251F42EA00B00FBF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0E9DF4CC251F5F4C00B00FBF /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		0E9DF4D125208C9000B00FBF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		0EDE048C2520D7B0007584AF /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		0EDE04912520D7D1007584AF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0EDE04962520D880007584AF /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		1AB387B140E3284B2F7EEE5B /* Pods_socialAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socialAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3341A27BFA853472A1623CD8 /* Pods-socialApp-socialAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialApp-socialAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-socialApp-socialAppUITests/Pods-socialApp-socialAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5271AC2D5E79B5611A1C4C6F /* Pods-socialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialApp.debug.xcconfig"; path = "Target Support Files/Pods-socialApp/Pods-socialApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EDE04882520D729007584AF /* SDWebImageSwiftUI in Frameworks */,
 				528D46518EE028C22B44355D /* Pods_socialApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				0E9DF4CC251F5F4C00B00FBF /* UploadImage.swift */,
+				0E6111D525230FC1003B1412 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +195,9 @@
 				0E9DF48F251F3A0700B00FBF /* Register.swift */,
 				0E9DF4B0251F42EA00B00FBF /* ImagePicker.swift */,
 				0E9DF4D125208C9000B00FBF /* Home.swift */,
+				0EDE048C2520D7B0007584AF /* PostView.swift */,
+				0EDE04912520D7D1007584AF /* SettingsView.swift */,
+				0EDE04962520D880007584AF /* CustomTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +207,7 @@
 			children = (
 				0E9DF459251E3E7F00B00FBF /* LoginViewModel.swift */,
 				0E9DF4AB251F3F6C00B00FBF /* RegisterViewModel.swift */,
+				0E6111D025230F5F003B1412 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -236,6 +253,9 @@
 			dependencies = (
 			);
 			name = socialApp;
+			packageProductDependencies = (
+				0EDE04872520D729007584AF /* SDWebImageSwiftUI */,
+			);
 			productName = socialApp;
 			productReference = 0E43B266251E2F350057366C /* socialApp.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +330,9 @@
 				Base,
 			);
 			mainGroup = 0E43B25D251E2F350057366C;
+			packageReferences = (
+				0EDE04862520D729007584AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 0E43B267251E2F350057366C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -464,7 +487,12 @@
 				0E9DF4CD251F5F4C00B00FBF /* UploadImage.swift in Sources */,
 				0E43B26C251E2F350057366C /* ContentView.swift in Sources */,
 				0E43B26A251E2F350057366C /* socialAppApp.swift in Sources */,
+				0E6111D625230FC1003B1412 /* UserModel.swift in Sources */,
+				0E6111D125230F5F003B1412 /* SettingsViewModel.swift in Sources */,
+				0EDE048D2520D7B0007584AF /* PostView.swift in Sources */,
 				0E9DF490251F3A0700B00FBF /* Register.swift in Sources */,
+				0EDE04972520D880007584AF /* CustomTabBar.swift in Sources */,
+				0EDE04922520D7D1007584AF /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +812,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0EDE04862520D729007584AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0EDE04872520D729007584AF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EDE04862520D729007584AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E43B25E251E2F350057366C /* Project object */;
 }
