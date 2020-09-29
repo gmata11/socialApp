@@ -30,7 +30,7 @@ class LoginViewModel: ObservableObject {
                 self.isLoading = false
                 return
             }
-            self.alertView { (Code) in
+            alertView(msg: "Enter verification code") { (Code) in
                 let credential = PhoneAuthProvider.provider().credential(withVerificationID: ID!, verificationCode: Code)
                 Auth.auth().signIn(with: credential) { (res, err) in
                     if err != nil {
@@ -39,28 +39,10 @@ class LoginViewModel: ObservableObject {
                         self.isLoading = false
                         return
                     }
-                    
                     self.checkUser()
                 }
             }
         }
-    }
-    
-    func alertView(completion: @escaping (String) -> ()) {
-        let alert = UIAlertController(title: "Verification", message: "Enter Code", preferredStyle: .alert)
-        alert.addTextField { (text) in
-            text.placeholder = "123456"
-        }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
-        alert.addAction(UIAlertAction(title: "Verify", style: .default, handler: { (_) in
-            let code = alert.textFields![0].text ?? ""
-            if code == "" {
-                UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
-                return
-            }
-            completion(code)
-        }))
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
     }
     
     func checkUser() {

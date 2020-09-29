@@ -23,7 +23,7 @@ struct Home: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             CustomTabBar(selectedTab: $selectedTab)
-                .padding(.bottom,edges!.bottom == 0 ? 15 : 0)
+                .padding(.bottom, edges!.bottom == 0 ? 15 : 30)
         }
         .background(Color("Background")).ignoresSafeArea(.all, edges: .all)
         .ignoresSafeArea(.all, edges: .top)

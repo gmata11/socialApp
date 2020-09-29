@@ -49,4 +49,19 @@ class SettingsViewModel: ObservableObject {
             }
         }
     }
+    
+    func updateDetails(field: String) {
+        alertView(msg: "Update \(field)") { (txt) in
+            if txt != "" {
+                self.updateBio(id: field == "Name" ? "username" : "bio", value: txt)
+            }
+        }
+    }
+    
+    func updateBio(id: String, value: String) {
+        ref.collection("Users").document(uid).updateData([id : value]) { (err) in
+            if err != nil { return }
+            self.fetchUser()
+        }
+    }
 }

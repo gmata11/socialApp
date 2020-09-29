@@ -11,6 +11,7 @@ import SDWebImageSwiftUI
 struct SettingsView: View {
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @StateObject var settingsData = SettingsViewModel()
+    @State var open = false
     var body: some View {
         VStack {
             HStack {
@@ -19,6 +20,17 @@ struct SettingsView: View {
                     .fontWeight(.medium)
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
+                Button(action: {
+                    self.open.toggle()
+                    settingsData.fetchUser()
+                }) {
+                    Image(systemName: "goforward")
+                        .rotationEffect(.degrees(open ? 365 : 0))
+                        .font(.title)
+                        .frame(width: 25.0, height: 25.0)
+                        .foregroundColor(Color.white)
+                        .animation(.spring(response: 0.2, dampingFraction: 0.4, blendDuration: 0))
+                }
             }
             .padding()
             .padding(.top, edges!.top)
@@ -48,7 +60,7 @@ struct SettingsView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
-                Button(action: {}) {
+                Button(action: {settingsData.updateDetails(field: "Name")}) {
                     Image(systemName: "pencil.circle.fill")
                         .font(.system(size: 20))
                         .foregroundColor(.white)
@@ -59,7 +71,7 @@ struct SettingsView: View {
             HStack(spacing: 15) {
                 Text(settingsData.userInfo.bio)
                     .foregroundColor(.white)
-                Button(action: {}) {
+                Button(action: {settingsData.updateDetails(field: "Bio")}) {
                     Image(systemName: "pencil.circle.fill")
                         .font(.system(size: 20))
                         .foregroundColor(.white)
@@ -79,6 +91,7 @@ struct SettingsView: View {
             .padding(.top, 10)
             
             Spacer(minLength: 0)
+            
         }
         .sheet(isPresented: $settingsData.picker) {
             ImagePicker(picker: $settingsData.picker, img_Data: $settingsData.img_data)
