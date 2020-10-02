@@ -57,7 +57,7 @@ struct PostView: View {
                 }
             }
         }.fullScreenCover(isPresented: $postData.newPost) {
-            NewPost()
+            NewPost(updateId: $postData.updateiD)
         }
     }
 }

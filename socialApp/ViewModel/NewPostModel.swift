@@ -15,8 +15,18 @@ class NewPostModel: ObservableObject {
     @Published var isPosting = false
     let uid = Auth.auth().currentUser!.uid
     
-    func post(present: Binding<PresentationMode>) {
+    func post(updateId: String, present: Binding<PresentationMode>) {
         isPosting = true
+        if updateId != "" {
+            ref.collection("Posts").document(updateId).updateData([
+                "title": postTxt
+            ]) { (err) in
+                self.isPosting = false
+                if err != nil { return }
+                present.wrappedValue.dismiss()
+            }
+            return
+        }
         if img_Data.count == 0 {
             ref.collection("Posts").document().setData([
                 "title": self.postTxt,

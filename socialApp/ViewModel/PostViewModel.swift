@@ -12,6 +12,7 @@ class PostViewModel: ObservableObject {
     @Published var posts: [PostModel] = []
     @Published var noPost = false
     @Published var newPost = false
+    @Published var updateiD = ""
     let ref = Firestore.firestore()
     
     init() {
@@ -44,9 +45,24 @@ class PostViewModel: ObservableObject {
                 }
                 
                 if doc.type == .removed {
+                    print("Removed")
                     let id = doc.document.documentID
                     self.posts.removeAll { (post) -> Bool in
                         return post.id == id
+                    }
+                }
+                
+                if doc.type == .modified {
+                    print("Updated")
+                    let id = doc.document.documentID
+                    let title = doc.document.data()["title"] as! String
+                    let index = self.posts.firstIndex { (post) -> Bool in
+                        return post.id == id
+                    } ?? -1
+                    
+                    if index != -1 {
+                        self.posts[index].title = title
+                        self.updateiD = ""
                     }
                 }
             }
@@ -63,6 +79,7 @@ class PostViewModel: ObservableObject {
     }
     
     func editPost(id: String) {
-        
+        updateiD = id
+        newPost.toggle()
     }
 }

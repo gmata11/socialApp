@@ -10,10 +10,14 @@ import SwiftUI
 struct NewPost: View {
     @StateObject var newPostData = NewPostModel()
     @Environment(\.presentationMode) var present
+    @Binding var updateId: String
     var body: some View {
         VStack {
             HStack(spacing: 15) {
-                Button(action: { present.wrappedValue.dismiss() }) {
+                Button(action: {
+                    self.updateId = ""
+                    present.wrappedValue.dismiss()
+                }) {
                     Text("Cancel")
                         .fontWeight(.bold)
                         .foregroundColor(Color("ButtonLogin"))
@@ -21,13 +25,15 @@ struct NewPost: View {
                 
                 Spacer(minLength: 0)
                 
-                Button(action: {newPostData.picker.toggle()}) {
-                    Image(systemName: "photo.fill")
-                        .font(.title)
-                        .foregroundColor(Color("ButtonLogin"))
+                if updateId == "" {
+                    Button(action: {newPostData.picker.toggle()}) {
+                        Image(systemName: "photo.fill")
+                            .font(.title)
+                            .foregroundColor(Color("ButtonLogin"))
+                    }
                 }
                 
-                Button(action: {newPostData.post(present: present)}) {
+                Button(action: {newPostData.post(updateId: updateId, present: present)}) {
                     Text("Post")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
