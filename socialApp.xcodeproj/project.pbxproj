@@ -20,6 +20,7 @@
 		0E43B27C251E2F360057366C /* socialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43B27B251E2F360057366C /* socialAppTests.swift */; };
 		0E43B287251E2F360057366C /* socialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43B286251E2F360057366C /* socialAppUITests.swift */; };
 		0E43B29B251E398B0057366C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E43B29A251E398B0057366C /* GoogleService-Info.plist */; };
+		0E5CA3DD2527417B00C57F64 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5CA3DC2527417B00C57F64 /* SplashScreenView.swift */; };
 		0E6111D125230F5F003B1412 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6111D025230F5F003B1412 /* SettingsViewModel.swift */; };
 		0E6111D625230FC1003B1412 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6111D525230FC1003B1412 /* UserModel.swift */; };
 		0E6111DB252337D3003B1412 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6111DA252337D3003B1412 /* AlertView.swift */; };
@@ -77,6 +78,7 @@
 		0E43B286251E2F360057366C /* socialAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = socialAppUITests.swift; sourceTree = "<group>"; };
 		0E43B288251E2F360057366C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E43B29A251E398B0057366C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E5CA3DC2527417B00C57F64 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		0E6111D025230F5F003B1412 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		0E6111D525230FC1003B1412 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0E6111DA252337D3003B1412 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		0E43B268251E2F350057366C /* socialApp */ = {
 			isa = PBXGroup;
 			children = (
+				0E5CA3DB2527415900C57F64 /* Splash */,
 				0E9DF450251E3C0200B00FBF /* ViewModel */,
 				0E9DF44F251E3BFB00B00FBF /* View */,
 				0E9DF44E251E3BF400B00FBF /* Model */,
@@ -191,6 +194,14 @@
 				0E43B288251E2F360057366C /* Info.plist */,
 			);
 			path = socialAppUITests;
+			sourceTree = "<group>";
+		};
+		0E5CA3DB2527415900C57F64 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0E5CA3DC2527417B00C57F64 /* SplashScreenView.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		0E9DF44E251E3BF400B00FBF /* Model */ = {
@@ -515,6 +526,7 @@
 				0E6111D625230FC1003B1412 /* UserModel.swift in Sources */,
 				0E196C732523DC1C00A4BCBD /* NewPost.swift in Sources */,
 				0E6111D125230F5F003B1412 /* SettingsViewModel.swift in Sources */,
+				0E5CA3DD2527417B00C57F64 /* SplashScreenView.swift in Sources */,
 				0EDE048D2520D7B0007584AF /* PostView.swift in Sources */,
 				0E9DF490251F3A0700B00FBF /* Register.swift in Sources */,
 				0E196C6E252397C100A4BCBD /* PostRow.swift in Sources */,
