@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 class SettingsViewModel: ObservableObject {
-    @Published var userInfo = UserModel(username: "", pic: "", bio: "")
+    @Published var userInfo = UserModel(username: "", pic: "", bio: "", uid: "")
     @AppStorage("current_status") var status = false
     @Published var picker = false
     @Published var img_data = Data(count: 0)

@@ -11,6 +11,7 @@ import Firebase
 class PostViewModel: ObservableObject {
     @Published var posts: [PostModel] = []
     @Published var noPost = false
+    @Published var newPost = false
     let ref = Firestore.firestore()
     
     init() {
@@ -36,9 +37,32 @@ class PostViewModel: ObservableObject {
                     
                     fetchUser(uid: userRef.documentID) { (user) in
                         self.posts.append(PostModel(id: doc.document.documentID, title: title, pic: pic, time: time.dateValue(), user: user))
+                        self.posts.sort { (p1,p2) -> Bool in
+                            return p1.time > p2.time
+                        }
+                    }
+                }
+                
+                if doc.type == .removed {
+                    let id = doc.document.documentID
+                    self.posts.removeAll { (post) -> Bool in
+                        return post.id == id
                     }
                 }
             }
         }
+    }
+    
+    func deletePost(id: String) {
+        ref.collection("Posts").document(id).delete { (err) in
+            if err != nil {
+                print(err!.localizedDescription)
+                return
+            }
+        }
+    }
+    
+    func editPost(id: String) {
+        
     }
 }

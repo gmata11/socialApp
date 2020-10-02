@@ -19,7 +19,10 @@ struct PostView: View {
                     .fontWeight(.medium)
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
-                Button(action: { self.open.toggle() }) {
+                Button(action: {
+                    postData.newPost.toggle()
+                    self.open.toggle()
+                }) {
                     Image(systemName: "square.and.pencil")
                         .foregroundColor(.white)
                         .rotationEffect(.degrees(open ? 365 : 0))
@@ -46,12 +49,15 @@ struct PostView: View {
                 ScrollView {
                     VStack(spacing: 15) {
                         ForEach(postData.posts){post in
-                            PostRow(post: post)
+                            PostRow(post: post, postData: postData)
                         }
                     }
                     .padding()
+                    .padding(.bottom, 55)
                 }
             }
+        }.fullScreenCover(isPresented: $postData.newPost) {
+            NewPost()
         }
     }
 }

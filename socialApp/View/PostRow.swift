@@ -7,12 +7,16 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import Firebase
 
 struct PostRow: View {
     var post: PostModel
+    @ObservedObject var postData: PostViewModel
+    let uid = Auth.auth().currentUser!.uid
+    
     var body: some View {
-        VStack(spacing: 10) {
-            HStack(spacing: 10) {
+        VStack(spacing: 15) {
+            HStack(spacing: 15) {
                 WebImage(url: URL(string: post.user.pic)!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -22,16 +26,23 @@ struct PostRow: View {
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                 Spacer(minLength: 0)
-                Menu(content: {
-                    Text("Edit")
-                    Text("Delete")
-                }, label: {
-                    Image("menu")
-                        .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 18, height: 18)
-                        .foregroundColor(.white)
-                })
+                
+                if post.user.uid == uid {
+                    Menu(content: {
+                        Button(action: {postData.editPost(id: post.id)}) {
+                            Text("Edit")
+                        }
+                        Button(action: {postData.deletePost(id: post.id)}) {
+                            Text("Delete")
+                        }
+                    }, label: {
+                        Image(systemName: "plus")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 18, height: 18)
+                            .foregroundColor(.white)
+                    })
+                }
             }
             
             if post.pic != "" {
@@ -47,6 +58,15 @@ struct PostRow: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 Spacer(minLength: 0)
+            }
+            .padding(.top, 5)
+            
+            HStack {
+                Spacer(minLength: 0)
+                Text(post.time, style: .time)
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
             }
         }
         .padding()
